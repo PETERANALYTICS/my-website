@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the data science projects by P.A Mwaura in R, Tableau, and Python.">
+    <meta name="keywords" content="Data Science Projects, R, Python, SQL, Web Scraping, Tableau, Portfolio">
+    <meta name="author" content="P.A Mwaura">
+    <title>Projects</title>
+    <link rel="icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #0056b3;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .project {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .project button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .project button:hover {
+            background: #218838;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projects</h1>
+    </header>
+    <nav>
+        <a href="index.html" aria-label="Go to Home Page">Home</a>
+        <a href="projects.html" aria-label="View My Projects">Projects</a>
+        <a href="contact.html" aria-label="Contact Me">Contact</a>
+        <a href="reviews.html" aria-label="View Reviews and Questions">Reviews</a>
+    </nav>
+    <main>
+        <h2>My Projects</h2>
+        <div id="projects"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 P.A Mwaura Analytics Portfolio</p>
+    </footer>
+    <script>
+        const projectContainer = document.getElementById('projects');
+        const projects = [
+            { name: 'Predictive Sales Analysis', link: 'predictive_sales.html', reviews: 12 },
+            { name: 'Web Scraping Market Trends', link: 'web_scraping.html', reviews: 8 },
+            { name: 'Tableau Dashboards', link: 'tableau_dashboard.html', reviews: 15 },
+            { name: 'SQL Data Pipelines', link: 'sql_data_pipelines.html', reviews: 9 }
+        ];
+
+        projects.sort(() => Math.random() - 0.5); // Randomize the projects
+
+        projects.forEach(project => {
+            const div = document.createElement('div');
+            div.className = 'project';
+            div.innerHTML = `
+                <h3>${project.name}</h3>
+                <button onclick="location.href='${project.link}'">View Analysis</button>
+                <p>${project.reviews} Reviews</p>
+            `;
+            projectContainer.appendChild(div);
+        });
+    </script>
+</body>
+</html>
